@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -9,7 +10,22 @@ import { environment } from 'src/environments/environment';
 export class HeaderComponent implements OnInit {
   public username = environment.username;
 
-  constructor() {}
+  constructor(private meta: Meta) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.setTags();
+  }
+
+  private setTags(): void {
+    this.meta.addTags([
+      {
+        name: 'description',
+        content: `${this.username}'s GitHub portfolio`
+      },
+      {
+        name: 'author',
+        content: this.username
+      }
+    ]);
+  }
 }

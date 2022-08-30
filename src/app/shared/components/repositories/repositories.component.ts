@@ -16,6 +16,10 @@ export class RepositoriesComponent implements OnInit {
   constructor(private githubService: GithubService) {}
 
   ngOnInit(): void {
+    this.getRepositores();
+  }
+
+  private getRepositores(): void {
     this.repos$ = this.githubService
       .getRepos()
       .pipe(map((repos) => repos.filter((repo) => !repo.fork)));
