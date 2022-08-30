@@ -1,0 +1,28 @@
+<app-panel caption="Repositories" icon="folder">
+  <div class="repositories-wrapper">
+    <div class="repository" *ngFor="let repo of repos$ | async">
+      <p-card>
+        <ng-template pTemplate="content">
+          <h3>
+            <a [href]="repo.html_url">{{ repo.name }}</a>
+          </h3>
+          <p class="card-description" [title]="repo.description">
+            {{ repo.description || 'No description' }}
+          </p>
+          <div class="data-wrapper" title="Language">
+            <i class="pi pi-code"></i>
+            <p>{{ repo.language }}</p>
+          </div>
+          <div class="data-wrapper" title="Github stars">
+            <i class="pi pi-star"></i>
+            <p>{{ repo.stargazers_count }}</p>
+          </div>
+          <div class="data-wrapper" title="Forks count">
+            <i class="pi pi-sitemap"></i>
+            <p>{{ repo.forks_count }}</p>
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+</app-panel>

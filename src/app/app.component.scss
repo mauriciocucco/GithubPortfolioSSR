@@ -1,0 +1,20 @@
+@import '/src/scss/variables.scss';
+
+#main-section {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-areas: 'left right';
+  height: $right-column-max-height;
+  margin-top: $main-section-margin-top;
+}
+
+.right {
+  display: grid;
+  gap: 8px;
+  grid-area: right;
+  grid-template-rows: 50% 50%;
+}
+
+.right-row:nth-of-type(1) {
+  overflow-y: hidden;
+}

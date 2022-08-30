@@ -1,0 +1,31 @@
+<p-card *ngIf="user$ | async as user">
+  <ng-template pTemplate="header">
+    <img
+      id="profile-photo"
+      [src]="user.avatar_url"
+      alt="{{ user.name }} photo"
+    />
+  </ng-template>
+  <ng-template pTemplate="content">
+    <h2>{{ user.name }}</h2>
+    <p>{{ user.bio }}</p>
+    <div class="data-wrapper" title="Location">
+      <i class="pi pi-map"></i>
+      <p>{{ user.location }}</p>
+    </div>
+    <div class="data-wrapper" title="Followers">
+      <i class="pi pi-users"></i>
+      <p>{{ user.followers }}</p>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <div class="card-footer">
+      <a
+        href="https://www.twitter.com/{{ user.twitter_username }}"
+        class="card-link"
+        >Twitter</a
+      >
+      <a [href]="user.blog" class="card-link"> Personal blog</a>
+    </div>
+  </ng-template>
+</p-card>

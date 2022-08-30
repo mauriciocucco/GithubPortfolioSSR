@@ -1,0 +1,26 @@
+<app-panel caption="Organizations" icon="sitemap">
+  <div
+    class="organizations-wrapper"
+    *ngIf="orgs.length > 0; else noOrganizations"
+  >
+    <a
+      href="https://www.github.com/{{ org.login }}"
+      class="list-group-item"
+      *ngFor="let org of orgs"
+    >
+      <div>
+        <img [src]="org.avatar_url" />
+        <div class="right-column">
+          <h5>{{ org.login }}</h5>
+          <p>{{ org.description }}</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</app-panel>
+
+<ng-template #noOrganizations>
+  <div class="not-found-wrapper">
+    <h3>No organizations found</h3>
+  </div>
+</ng-template>

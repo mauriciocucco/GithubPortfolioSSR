@@ -1,0 +1,15 @@
+@import '/src/scss/variables.scss';
+
+.repositories-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 33.3%);
+  max-height: calc($right-column-max-height - 50vh);
+  overflow-y: auto;
+  width: 100%;
+}
+
+.card-description {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

@@ -1,0 +1,17 @@
+@import '/src/scss/variables.scss';
+
+#header {
+  height: $header-height;
+}
+
+#github-wrapper {
+  @include flex-center;
+  align-items: unset;
+  color: white;
+  gap: 8px;
+
+  i {
+    color: white;
+    font-size: 1.4rem;
+  }
+}

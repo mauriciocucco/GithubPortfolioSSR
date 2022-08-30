@@ -1,0 +1,31 @@
+@import 'src/scss/variables';
+
+img {
+  width: 60px;
+  height: 40px;
+}
+
+.organizations-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 363px;
+  overflow-y: auto;
+  width: 100%;
+
+  .list-group-item {
+    display: flex;
+    width: 100%;
+  }
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.not-found-wrapper {
+  @include flex-center;
+  flex: 1;
+}

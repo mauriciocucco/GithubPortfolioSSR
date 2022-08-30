@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'scss/variables';
+@import 'scss/header';
+@import 'scss/personal-info';
+@import 'scss/repositories';
+
+.data-wrapper {
+  @include flex-center;
+  gap: 8px;
+
+  p {
+    font-weight: bold;
+    // margin: unset;
+  }
+
+  i {
+    font-size: 1.2rem;
+  }
+}
+
+.p-card-header {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+}
+
+.p-card-content {
+  padding: unset !important;
+  text-align: center;
+}
